@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 import pandas as pd
+from IPython.display import display
 
 # This class defines a common interface for data inspection strategies.
 class DataInspectionStrategy(ABC):
@@ -17,7 +18,7 @@ class DataTypesInspectionStrategy(DataInspectionStrategy):
         Inspects and prints the data types and non-null counts of the dataframe columns.
         """
         print("\nData Types and Non-null Counts:")
-        print(df.info())
+        display(df.info())
 
 # This strategy provides summary statistics for both numerical and categorical features.
 class SummaryStatisticsInspectionStrategy(DataInspectionStrategy):
@@ -26,9 +27,9 @@ class SummaryStatisticsInspectionStrategy(DataInspectionStrategy):
         Prints summary statistics for numerical and categorical features.
         """
         print("\nSummary Statistics (Numerical Features):")
-        print(df.describe())
+        display(df.describe())
         print("\nSummary Statistics (Categorical Features):")
-        print(df.describe(include=["O"]))
+        display(df.describe(include=["O"]))
 
 
 # This class allows you to switch between different data inspection strategies.

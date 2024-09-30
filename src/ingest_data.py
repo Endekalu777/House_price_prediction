@@ -3,6 +3,7 @@ import pandas as pd
 import zipfile
 from abc import ABC, abstractmethod
 
+
 # Define an abstract class for data Ingestor
 class DataIngestor(ABC):
     @abstractmethod
